@@ -1,0 +1,6 @@
+class Pony {
+	private :
+		
+	public:
+
+};
