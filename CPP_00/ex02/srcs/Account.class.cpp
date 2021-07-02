@@ -6,17 +6,20 @@
 /*   By: hyunlee <hyunlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 17:34:04 by hyunlee           #+#    #+#             */
-/*   Updated: 2021/07/02 20:40:33 by hyunlee          ###   ########.fr       */
+/*   Updated: 2021/07/02 21:11:20 by hyunlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <ctime>
+#include <iomanip>
 #include "Account.class.hpp"
 
 int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
 int	Account::_totalNbDeposits = 0;
 int	Account::_totalNbWithdrawals = 0;
+int	Account::_totalCheckNum = 0;
 
 Account::Account(int initial_deposit)
 {
@@ -89,6 +92,7 @@ bool	Account::makeWithdrawal(int withdrawal)
 
 int		Account::checkAmount(void) const
 {
+	_totalCheckNum++;
 	return (_amount);
 }
 
@@ -104,7 +108,16 @@ Account::~Account(void)
 	std::cout << " index:" << _accountIndex << ";amount:" << _amount << ";closed" << std::endl;
 }
 
-void	Account::_displayTimestamp(void)
+void Account::_displayTimestamp(void)
 {
-	std::cout << "[19920104_091532]";
+	time_t now = time(nullptr);
+	tm *now_tm = localtime(&now);
+	std::cout << std::setfill('0')
+			  << "[" << now_tm->tm_year + 1900
+			  << std::setw(2) << now_tm->tm_mon + 1
+			  << std::setw(2) << now_tm->tm_mday << "_"
+			  << std::setw(2) << now_tm->tm_hour
+			  << std::setw(2) << now_tm->tm_min
+			  << std::setw(2) << now_tm->tm_sec
+			  << "]";
 }

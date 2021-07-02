@@ -44,6 +44,7 @@ private:
 	static int	_totalAmount;
 	static int	_totalNbDeposits;
 	static int	_totalNbWithdrawals;
+	static int	_totalCheckNum;
 
 	static void	_displayTimestamp( void );
 	// [19920104_091532]
