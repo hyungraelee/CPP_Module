@@ -5,7 +5,11 @@ int add_contact(Contact &contact)
 	if (contact.GetNum() < 8)
 		contact.Add();
 	else
+	{
+		std::cout << std::endl;
 		std::cout << "Sorry.... this phonebook is fxxking small :(" << std::endl;
+		std::cout << std::endl;
+	}
 	return (1);
 }
 
@@ -38,10 +42,13 @@ int main()
 	Contact contact;
 	std::string command;
 
+	std::cout << std::endl;
 	std::cout << "Welcome to Hyunlee's Awesome Phonebook!!! >_@" << std::endl;
+	std::cout << std::endl;
 	while (!std::cin.eof())
 	{
-		std::cout << "Command: ";
+		std::cout << "Input Command (ADD / SEARCH / EXIT)" << std::endl;
+		std::cout << "     : ";
 		std::getline(std::cin, command);
 		if (command == "ADD" || command == "add")
 			add_contact(contact);
