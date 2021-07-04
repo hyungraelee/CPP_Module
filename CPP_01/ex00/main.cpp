@@ -38,5 +38,6 @@ int	main()
 	heappony->Cry();
 	std::cout << "\nGood job!!! Get some rest.\n" << std::endl;
 	delete heappony;
+	heappony = NULL;
 	return (0);
 }
