@@ -9,7 +9,9 @@ void memoryLeak()
 
 // int	main()
 // {
-// 	memoryLeak();
+// 	{
+// 		memoryLeak();
+// 	}
 // 	system("leaks a.out");
 // 	return (0);
 // }
