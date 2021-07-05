@@ -10,6 +10,8 @@ class Zombie {
 	public :
 		Zombie();
 		~Zombie();
+		void	setType(std::string type);
+		void	setName(std::string name);
 		void	announce(void);
 };
 
