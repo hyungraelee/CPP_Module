@@ -16,7 +16,6 @@ Zombie*	ZombieEvent::newZombie(std::string name){
 std::string	makeRandName(void) {
 	std::string	namePool[10] = {"hyunlee", "jiholee", "hkwon", "jaeskim", "spark", "skim", "yjung", "jolim", "kilee", "polorbear"};
 
-	srand(time(NULL));
 	return (namePool[rand() % 10]);
 }
 
