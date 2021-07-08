@@ -43,4 +43,6 @@ void	Karen::complain(std::string level)
 			return ;
 		}
 	}
+	std::cout << "Karen isn't upset." << std::endl;
+	return ;
 }
