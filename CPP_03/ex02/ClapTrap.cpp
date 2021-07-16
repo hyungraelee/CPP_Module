@@ -1,13 +1,14 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() {
+	std::cout << "ClapTrap " << "default constructor." << std::endl;
 	hitPoints = 10;
 	energyPoints = 10;
 	attackDamage = 0;
 }
 
 ClapTrap::ClapTrap(std::string name) {
-	std::cout << "BeepBeep,, Hello My name is " << name << std::endl;
+	std::cout << "ClapTrap " << name << " constructor." << std::endl;
 	this->name = name;
 	hitPoints = 10;
 	energyPoints = 10;
@@ -15,14 +16,16 @@ ClapTrap::ClapTrap(std::string name) {
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << this->name << " : I'll.....b...e.........B..ack...!!!" << std::endl;
+	std::cout << "ClapTrap " << this->name << " destructor." << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap& c) {
+	std::cout << "ClapTrap copy constructor." << std::endl;
 	*this = c;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& c) {
+	std::cout << "ClapTrap " << "assignation overloading." << std::endl;
 	this->name = c.name;
 	this->hitPoints = c.hitPoints;
 	this->energyPoints = c.energyPoints;
@@ -31,17 +34,17 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& c) {
 }
 
 void ClapTrap::attack(std::string const & target) {
-	std::cout << name << " attacks " << target << ", causing " << this->attackDamage << " points of damage!" << std::endl;
+	std::cout << "ClapTrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " points of damage!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
 	this->hitPoints -= amount;
-	std::cout << name << " : Shxxxxt!!! My afo :(. " << getName() << " took " << amount << " damages." << std::endl;
+	std::cout << "ClapTrap " << this->name << " took " << amount << " damages." << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
 	this->hitPoints += amount;
-	std::cout << name << " : Heart bbongbbong!!! " << getName() << " healed " << amount << ". Repaired complete!" << std::endl;
+	std::cout << "ClapTrap " << this->name << " is repaired " << amount << ". Repaired complete!" << std::endl;
 }
 
 void ClapTrap::setName(std::string name) {

@@ -1,4 +1,4 @@
-NAME = claptrap
+NAME = fragtrap
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror #-std=c++98
 #CFLAGS = -g3 -fsanitize=address

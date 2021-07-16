@@ -4,12 +4,12 @@ int main()
 {
 	ScavTrap a("Hyunlee");
 	ScavTrap b;
-	ScavTrap c("Jaeskim");
+	ClapTrap c("Jaeskim");
 
 	b = a;
 	b.attack(c.getName());
 	c.takeDamage(b.getAttackDamage());
 	c.beRepaired(c.getEnergyPoints());
-	c.guardGate();
+	b.guardGate();
 	return (0);
 }
