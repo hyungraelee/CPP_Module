@@ -20,7 +20,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
 	return (*this);
 }
 
-std::string Bureaucrat::getName() const {
+const std::string &Bureaucrat::getName() const {
 	return (this->name);
 }
 
