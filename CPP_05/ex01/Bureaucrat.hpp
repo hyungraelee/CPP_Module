@@ -20,8 +20,8 @@ public:
 
 	const std::string getName() const;
 	int getGrade() const;
-	void incrementGrade(int amount);
-	void decrementGrade(int amount);
+	void incrementGrade(int amount = 1);
+	void decrementGrade(int amount = 1);
 
 	void signForm(Form &form);
 
