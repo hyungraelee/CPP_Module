@@ -29,7 +29,7 @@ int main()
 	try {
 		b->incrementGrade(3);
 		std::cout << *b << std::endl;
-		b->incrementGrade(3);
+		b->incrementGrade();
 		std::cout << *b << std::endl;
 	}
 	catch (std::exception &e) {
