@@ -53,7 +53,7 @@ void Bureaucrat::signForm(Form& form) {
 
 void Bureaucrat::executeForm(Form const & form) {
 	try {
-		form.action(*this);
+		form.execute(*this);
 		std::cout << this->name << " executes " << form.getName() << std::endl;
 	}
 	catch(const std::exception& e) {

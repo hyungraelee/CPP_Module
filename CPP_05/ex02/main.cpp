@@ -8,7 +8,7 @@ void do_beSigned(Form &form, Bureaucrat &bureaucrat)
 {
 	try
 	{
-		form.beSigned(bureaucrat);
+		bureaucrat.signForm(form);
 		std::cout << form << std::endl;
 	}
 	catch (const std::exception &e)
@@ -23,7 +23,7 @@ void do_action(Form &form, Bureaucrat &bureaucrat)
 	try
 	{
 		std::cout << form << std::endl;
-		form.action(bureaucrat);
+		bureaucrat.executeForm(form);
 	}
 	catch (const std::exception &e)
 	{

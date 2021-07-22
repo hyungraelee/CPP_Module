@@ -51,8 +51,8 @@ public:
 			}
 	};
 
-	void execute(Bureaucrat const & executor) const;
-	virtual void action(Bureaucrat const & executor) const = 0;
+	void checkStatus(Bureaucrat const & executor) const;
+	virtual void execute(Bureaucrat const & executor) const = 0;
 
 };
 
