@@ -14,7 +14,7 @@ public:
 	ShrubberyCreationForm(const ShrubberyCreationForm&);
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm&);
 
-	virtual void action(Bureaucrat const & executor) const;
+	virtual void execute(Bureaucrat const & executor) const;
 };
 
 #endif

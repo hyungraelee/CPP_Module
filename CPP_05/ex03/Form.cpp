@@ -48,7 +48,7 @@ void Form::beSigned(Bureaucrat& b) {
 		throw GradeTooLowException();
 }
 
-void Form::execute(Bureaucrat const & executor) const {
+void Form::checkStatus(Bureaucrat const & executor) const {
 	if (!this->isSigned)
 		throw NoSignException();
 	if (this->gradeExecute < executor.getGrade())

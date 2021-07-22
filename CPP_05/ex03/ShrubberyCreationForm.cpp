@@ -17,8 +17,8 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	return (*this);
 }
 
-void ShrubberyCreationForm::action(Bureaucrat const & executor) const {
-	execute(executor);
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
+	checkStatus(executor);
 	std::ifstream fin("asciiTree.txt");
 
 	if (fin.is_open()) {
