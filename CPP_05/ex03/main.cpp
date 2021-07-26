@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hyunlee <hyunlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/26 19:39:07 by hyunlee           #+#    #+#             */
+/*   Updated: 2021/07/26 19:39:08 by hyunlee          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include "Bureaucrat.hpp"
 #include "PresidentialPardonForm.hpp"
@@ -12,18 +24,19 @@ void test_form(Form &form, Bureaucrat &correct, Bureaucrat &wrong)
 	correct.signForm(form);
 	wrong.executeForm(form);
 	correct.executeForm(form);
+	std::cout << std::endl;
 }
 
 int main()
 {
 	srand(time(NULL));
-	Bureaucrat jaeskim("hyunlee", 1);
+	Bureaucrat hyunlee("hyunlee", 1);
 	Bureaucrat wrong("wrong", 150);
 	Intern intern;
 	Form *form;
 	try {
 		form = intern.makeForm("ShrubberyCreation", "target");
-		test_form(*form, jaeskim, wrong);
+		test_form(*form, hyunlee, wrong);
 		delete form;
 	}
 	catch (std::exception &e) {
@@ -31,7 +44,7 @@ int main()
 	}
 	try {
 		form = intern.makeForm("RobotomyRequest", "target");
-		test_form(*form, jaeskim, wrong);
+		test_form(*form, hyunlee, wrong);
 		delete form;
 	}
 	catch (std::exception &e) {
@@ -39,7 +52,7 @@ int main()
 	}
 	try {
 		form = intern.makeForm("PresidentialPardon", "target");
-		test_form(*form, jaeskim, wrong);
+		test_form(*form, hyunlee, wrong);
 		delete form;
 	}
 	catch (std::exception &e) {
@@ -47,7 +60,7 @@ int main()
 	}
 	try {
 		form = intern.makeForm("WrongName", "target");
-		test_form(*form, jaeskim, wrong);
+		test_form(*form, hyunlee, wrong);
 		delete form;
 	}
 	catch (std::exception &e) {

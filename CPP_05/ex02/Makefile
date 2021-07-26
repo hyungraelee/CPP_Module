@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: hyunlee <hyunlee@student.42seoul.kr>       +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/07/26 19:37:03 by hyunlee           #+#    #+#              #
+#    Updated: 2021/07/26 19:37:59 by hyunlee          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = Bureaucrat
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
@@ -23,6 +35,7 @@ $(NAME) : $(OBJS)
 
 clean :
 	@$(RM) -r $(OBJS)
+	@$(RM) *_shrubbery
 
 fclean : clean
 	@$(RM) $(NAME)

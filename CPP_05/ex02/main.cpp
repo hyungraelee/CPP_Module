@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hyunlee <hyunlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/26 19:37:01 by hyunlee           #+#    #+#             */
+/*   Updated: 2021/07/26 19:37:02 by hyunlee          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include "Bureaucrat.hpp"
 #include "PresidentialPardonForm.hpp"
@@ -47,13 +59,13 @@ void test_form(Form &form, Bureaucrat &correct, Bureaucrat &wrong)
 
 int main()
 {
-	Bureaucrat jaeskim("hyunlee", 1);
+	Bureaucrat hyunlee("hyunlee", 1);
 	Bureaucrat wrong("wrong", 150);
 	ShrubberyCreationForm form1("target");
 	RobotomyRequestForm form2("target");
 	PresidentialPardonForm form3("target");
-	test_form(form1, jaeskim, wrong);
-	test_form(form2, jaeskim, wrong);
-	test_form(form3, jaeskim, wrong);
+	test_form(form1, hyunlee, wrong);
+	test_form(form2, hyunlee, wrong);
+	test_form(form3, hyunlee, wrong);
 	return 0;
 }
