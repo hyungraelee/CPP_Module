@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hyunlee <hyunlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/26 16:36:56 by hyunlee           #+#    #+#             */
+/*   Updated: 2021/07/26 16:36:57 by hyunlee          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Cure.hpp"
 #include "Ice.hpp"
 #include "Character.hpp"
@@ -25,7 +37,7 @@ int main()
 		delete src;
 	}
 	{
-		system("leaks a.out");
+		system("leaks AMateria");
 	}
 	return 0;
 }

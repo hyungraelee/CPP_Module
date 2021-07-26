@@ -5,22 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hyunlee <hyunlee@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/07/26 16:35:21 by hyunlee           #+#    #+#              #
-#    Updated: 2021/07/26 16:35:22 by hyunlee          ###   ########.fr        #
+#    Created: 2021/07/26 16:36:59 by hyunlee           #+#    #+#              #
+#    Updated: 2021/07/26 16:37:00 by hyunlee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Animal
+NAME = AMateria
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 #CFLAGS = -g3 -fsanitize=address
 
 SRCS = 	./main.cpp	\
-		./Animal.cpp	\
-		./Dog.cpp		\
-		./Cat.cpp		\
-		./WrongAnimal.cpp	\
-		./WrongCat.cpp
+		./AMateria.cpp	\
+		./Character.cpp	\
+		./Cure.cpp		\
+		./Ice.cpp		\
+		./MateriaSource.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 RM = rm -f
