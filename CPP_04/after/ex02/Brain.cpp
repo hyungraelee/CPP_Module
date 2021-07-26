@@ -2,11 +2,11 @@
 
 Brain::Brain() {
 	const std::string ideas[] = {
-		"Normal",
-		"Angry",
-		"Sleepy",
-		"Hyungry",
-		"Happy"
+		"A",
+		"B",
+		"C",
+		"D",
+		"E"
 	};
 	std::cout << "Constructor Brain:";
 	for (int i = 0; i < 100; ++i)
@@ -33,9 +33,7 @@ Brain &Brain::operator=(Brain const &other) {
 
 Brain::~Brain() {
 	std::cout << "Destructor Brain:";
-	for (int i = 0; i < 100; ++i)
-	{
-		this->ideas[i] = ideas[rand() % (sizeof(ideas) / sizeof(std::string))];
+	for (int i = 0; i < 100; ++i) {
 		std::cout << " " << this->ideas[i];
 	}
 	std::cout << std::endl;
