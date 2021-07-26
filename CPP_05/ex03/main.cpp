@@ -6,7 +6,7 @@
 /*   By: hyunlee <hyunlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 19:39:07 by hyunlee           #+#    #+#             */
-/*   Updated: 2021/07/26 19:39:08 by hyunlee          ###   ########.fr       */
+/*   Updated: 2021/07/26 19:48:27 by hyunlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,42 +29,45 @@ void test_form(Form &form, Bureaucrat &correct, Bureaucrat &wrong)
 
 int main()
 {
-	srand(time(NULL));
-	Bureaucrat hyunlee("hyunlee", 1);
-	Bureaucrat wrong("wrong", 150);
-	Intern intern;
-	Form *form;
-	try {
-		form = intern.makeForm("ShrubberyCreation", "target");
-		test_form(*form, hyunlee, wrong);
-		delete form;
+	{
+		srand(time(NULL));
+		Bureaucrat hyunlee("hyunlee", 1);
+		Bureaucrat wrong("wrong", 150);
+		Intern intern;
+		Form *form;
+		try {
+			form = intern.makeForm("ShrubberyCreation", "target");
+			test_form(*form, hyunlee, wrong);
+			delete form;
+		}
+		catch (std::exception &e) {
+			std::cerr << e.what() << std::endl;
+		}
+		try {
+			form = intern.makeForm("RobotomyRequest", "target");
+			test_form(*form, hyunlee, wrong);
+			delete form;
+		}
+		catch (std::exception &e) {
+			std::cerr << e.what() << std::endl;
+		}
+		try {
+			form = intern.makeForm("PresidentialPardon", "target");
+			test_form(*form, hyunlee, wrong);
+			delete form;
+		}
+		catch (std::exception &e) {
+			std::cerr << e.what() << std::endl;
+		}
+		try {
+			form = intern.makeForm("WrongName", "target");
+			test_form(*form, hyunlee, wrong);
+			delete form;
+		}
+		catch (std::exception &e) {
+			std::cerr << e.what() << std::endl;
+		}
 	}
-	catch (std::exception &e) {
-		std::cerr << e.what() << std::endl;
-	}
-	try {
-		form = intern.makeForm("RobotomyRequest", "target");
-		test_form(*form, hyunlee, wrong);
-		delete form;
-	}
-	catch (std::exception &e) {
-		std::cerr << e.what() << std::endl;
-	}
-	try {
-		form = intern.makeForm("PresidentialPardon", "target");
-		test_form(*form, hyunlee, wrong);
-		delete form;
-	}
-	catch (std::exception &e) {
-		std::cerr << e.what() << std::endl;
-	}
-	try {
-		form = intern.makeForm("WrongName", "target");
-		test_form(*form, hyunlee, wrong);
-		delete form;
-	}
-	catch (std::exception &e) {
-		std::cerr << e.what() << std::endl;
-	}
+	system("leaks Bureaucrat");
 	return 0;
 }

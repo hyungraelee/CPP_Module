@@ -6,7 +6,7 @@
 /*   By: hyunlee <hyunlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 19:37:01 by hyunlee           #+#    #+#             */
-/*   Updated: 2021/07/26 19:37:02 by hyunlee          ###   ########.fr       */
+/*   Updated: 2021/07/26 19:49:59 by hyunlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,17 @@ void test_form(Form &form, Bureaucrat &correct, Bureaucrat &wrong)
 
 int main()
 {
-	Bureaucrat hyunlee("hyunlee", 1);
-	Bureaucrat wrong("wrong", 150);
-	ShrubberyCreationForm form1("target");
-	RobotomyRequestForm form2("target");
-	PresidentialPardonForm form3("target");
-	test_form(form1, hyunlee, wrong);
-	test_form(form2, hyunlee, wrong);
-	test_form(form3, hyunlee, wrong);
+	{
+		srand(time(NULL));
+		Bureaucrat hyunlee("hyunlee", 1);
+		Bureaucrat wrong("wrong", 150);
+		ShrubberyCreationForm form1("target");
+		RobotomyRequestForm form2("target");
+		PresidentialPardonForm form3("target");
+		test_form(form1, hyunlee, wrong);
+		test_form(form2, hyunlee, wrong);
+		test_form(form3, hyunlee, wrong);
+	}
+	system("leaks Bureaucrat");
 	return 0;
 }
