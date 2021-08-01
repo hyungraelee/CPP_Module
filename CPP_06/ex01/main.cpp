@@ -3,16 +3,19 @@
 
 int main()
 {
+	uintptr_t	serialKey;
 	{
 		Data		orig;
-		uintptr_t	serialKey;
-		Data*		dest;
 
 		orig.iValue = 42;
 		orig.strValue = "seoul";
 		orig.fValue = 42.42f;
 
 		serialKey = serialize(&orig);
+	}
+	{
+		Data*		dest;
+
 		dest = deserialize(serialKey);
 
 		std::cout << "dest - ivalue:\t\t" << dest->iValue << std::endl;
