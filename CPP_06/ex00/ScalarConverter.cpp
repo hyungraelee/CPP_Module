@@ -161,12 +161,23 @@ void ScalarConverter::charConverter() {
 }
 
 void ScalarConverter::intConverter() {
-	this->i = atoi(this->value.c_str());
-	this->c = static_cast<char>(this->i);
-	this->f = static_cast<float>(this->i);
-	this->d = static_cast<double>(this->i);
-	this->setCharStream();
-	this->intStr << "int: " << this->i;
+	long lvalue;
+
+	lvalue = atol(this->value.c_str());
+	if (lvalue < std::numeric_limits<int>::min() || lvalue > std::numeric_limits<int>::max()) {
+		this->f = static_cast<float>(lvalue);
+		this->d = static_cast<double>(lvalue);
+		this->charStr << "char: impossible";
+		this->intStr << "int: impossible";
+	}
+	else {
+		this->i = atoi(this->value.c_str());
+		this->c = static_cast<char>(this->i);
+		this->f = static_cast<float>(this->i);
+		this->d = static_cast<double>(this->i);
+		this->setCharStream();
+		this->intStr << "int: " << this->i;
+	}
 	this->floatStr << "float: " << this->f << ".0f";
 	this->doubleStr << "double: " << this->d << ".0";
 }
