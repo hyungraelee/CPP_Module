@@ -49,5 +49,19 @@ void identify(Base* p) {
 }
 
 void identify(Base& p) {
-	identify(&p);
+	try {
+		A ref_A = dynamic_cast<A&>(p);
+		ref_A.sound();
+	} catch (std::exception &e) {
+	}
+	try {
+		B ref_B = dynamic_cast<B&>(p);
+		ref_B.sound();
+	} catch (std::exception &e) {
+	}
+	try {
+		C ref_C = dynamic_cast<C&>(p);
+		ref_C.sound();
+	} catch (std::exception &e) {
+	}
 }
