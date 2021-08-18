@@ -8,6 +8,7 @@ ScalarConverter::ScalarConverter(char *arg) {
 	this->f = 0;
 	this->i = 0;
 	this->c = 0;
+	this->precision = -1;
 }
 
 ScalarConverter::~ScalarConverter() {
@@ -25,6 +26,7 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter& other) {
 	this->f = other.getFloat();
 	this->i = other.getInt();
 	this->c = other.getChar();
+	this->precision = other.getPrecision();
 	this->doubleStr.str("");
 	this->doubleStr << other.getDoubleStr();
 	this->floatStr.str("");
@@ -58,6 +60,10 @@ int ScalarConverter::getInt() const {
 
 char ScalarConverter::getChar() const {
 	return (this->c);
+}
+
+int ScalarConverter::getPrecision() const {
+	return (this->precision);
 }
 
 std::stringstream const & ScalarConverter::getDoubleStr() const {
@@ -104,9 +110,6 @@ void ScalarConverter::parse() {
 		if (this->value[0] == '+' || this->value[0] == '-') {
 			i = 1;
 		}
-		else {
-			i = 0;
-		}
 		for ( ; i < this->value_size ; i++) {
 			if (!isdigit(this->value[i]))
 				throw ArgumentException();
@@ -117,14 +120,15 @@ void ScalarConverter::parse() {
 		if (this->value[0] == '+' || this->value[0] == '-') {
 			i = 1;
 		}
-		else {
-			i = 0;
-		}
 		for ( ; i < this->value_size ; i++) {
-			if (i == idxPoint)
+			if (i == idxPoint) {
+				this->precision = 0;
 				continue ;
+			}
 			if (!isdigit(this->value[i]) && (i != (value_size - 1)))
 				throw ArgumentException();
+			if (isdigit(this->value[i]) && this->precision >= 0)
+				this->precision++;
 		}
 		if (this->value[value_size - 1] == 'f')
 			this->type = TYPE_FLOAT;
@@ -143,7 +147,6 @@ void ScalarConverter::setCharStream() {
 		if ((this->i >= 0 && this->i <= 8) || (this->i >= 14 && this->i <= 31) || this->i == 127)
 			this->charStr << "char: Non displayable";
 		else {
-			std::cout << "Here" << std::endl;
 			this->charStr << "char: '" << this->c << "'";
 		}
 	}
@@ -199,8 +202,8 @@ void ScalarConverter::floatConverter() {
 	this->setCharStream();
 	this->intStr << "int: " << this->i;
 	if (this->f > this->i || this->f < this->i) {
-		this->floatStr << "float: " << this->f << "f";
-		this->doubleStr << "double: " << this->d;
+		this->floatStr << "float: " << std::fixed << std::setprecision(this->precision) << this->f << "f";
+		this->doubleStr << "double: " << std::fixed << std::setprecision(this->precision) << this->d;
 	}
 	else {
 		this->floatStr << "float: " << this->f << ".0f";
@@ -225,8 +228,8 @@ void ScalarConverter::doubleConverter() {
 	this->setCharStream();
 	this->intStr << "int: " << this->i;
 	if (this->f > this->i || this->f < this->i) {
-		this->floatStr << "float: " << this->f << "f";
-		this->doubleStr << "double: " << this->d;
+		this->floatStr << "float: " << std::fixed << std::setprecision(this->precision) << this->f << "f";
+		this->doubleStr << "double: " << std::fixed << std::setprecision(this->precision) << this->d;
 	}
 	else {
 		this->floatStr << "float: " << this->f << ".0f";

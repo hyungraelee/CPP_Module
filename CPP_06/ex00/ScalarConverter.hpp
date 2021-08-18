@@ -4,6 +4,7 @@
 # include <iostream>
 # include <sstream>
 # include <limits>
+# include <iomanip>
 
 # define TYPE_CHAR 1
 # define TYPE_INT 2
@@ -22,6 +23,7 @@ private:
 	float		f;
 	int			i;
 	char		c;
+	int			precision;
 	std::stringstream	doubleStr;
 	std::stringstream	floatStr;
 	std::stringstream	intStr;
@@ -39,6 +41,7 @@ public:
 	float getFloat() const;
 	int getInt() const;
 	char getChar() const;
+	int getPrecision() const;
 	std::stringstream const & getDoubleStr() const;
 	std::stringstream const & getFloatStr() const;
 	std::stringstream const & getIntStr() const;
