@@ -146,5 +146,6 @@ $RECYCLE.BIN/
 *.lnk
 
 practice.*
+reverse.cpp
 .vscode
 # End of https://www.toptal.com/developers/gitignore/api/c,linux,macos,windows,c++
