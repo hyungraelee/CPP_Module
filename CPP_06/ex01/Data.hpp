@@ -5,6 +5,7 @@
 
 typedef struct	s_Data {
 	int			iValue;
+	int*		iPtrVal;
 	std::string	strValue;
 	float		fValue;
 }				Data;
