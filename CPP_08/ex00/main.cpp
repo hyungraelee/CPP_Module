@@ -27,7 +27,7 @@ int main()
 		std::cout << "find: " << ivalue2 << std::endl;
 		easyfind(vec, ivalue3);
 		std::cout << "find: " << ivalue3 << std::endl;
-	} catch (std::runtime_error &e) {
+	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << "-------------------------------------" << std::endl;

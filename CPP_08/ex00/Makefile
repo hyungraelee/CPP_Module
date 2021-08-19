@@ -1,4 +1,4 @@
-NAME = Easyfind
+NAME = easyfind
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 #CFLAGS = -g3 -fsanitize=address
