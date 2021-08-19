@@ -6,18 +6,18 @@
 /*   By: hyunlee <hyunlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 15:33:06 by hyunlee           #+#    #+#             */
-/*   Updated: 2021/08/19 15:33:07 by hyunlee          ###   ########.fr       */
+/*   Updated: 2021/08/19 16:50:02 by hyunlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ITER_HPP
 # define ITER_HPP
 
-template <class T>
-void print(T &a)
-{
-	std::cout << a << "\t";
-}
+// template <class T>
+// void print(T &a)
+// {
+// 	std::cout << a << "\t";
+// }
 
 template <class T>
 void plusOne(T &a)
@@ -28,23 +28,23 @@ void plusOne(T &a)
 // ---------------------------------------------------------------
 // ********* for checklist *********
 
-// class Awesome
-// {
-// public:
-// 	Awesome( void ) : _n( 42 ) {}
-// 	int get( void ) const { return this->_n; }
-// private:
-// 	int _n;
-// };
+class Awesome
+{
+public:
+	Awesome( void ) : _n( 42 ) {}
+	int get( void ) const { return this->_n; }
+private:
+	int _n;
+};
 
-// std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get(); return o; }
+std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get(); return o; }
 
-// template< class T >
-// void print( T & x )
-// {
-// 	std::cout << x << std::endl;
-// 	return;
-// }
+template< class T >
+void print( T & x )
+{
+	std::cout << x << std::endl;
+	return;
+}
 // ---------------------------------------------------------------
 
 template <class T>
