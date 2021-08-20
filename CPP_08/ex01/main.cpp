@@ -26,12 +26,12 @@ int main()
 		try {
 			sp.shortestSpan();
 		} catch (std::exception &e) {
-			std::cout << e.what() << std::endl;
+			std::cerr << e.what() << std::endl;
 		}
 		try {
 			sp.longestSpan();
 		} catch (std::exception &e) {
-			std::cout << e.what() << std::endl;
+			std::cerr << e.what() << std::endl;
 		}
 
 		sp.addNumber(1);
@@ -40,12 +40,12 @@ int main()
 		try {
 			sp.shortestSpan();
 		} catch (std::exception &e) {
-			std::cout << e.what() << std::endl;
+			std::cerr << e.what() << std::endl;
 		}
 		try {
 			sp.longestSpan();
 		} catch (std::exception &e) {
-			std::cout << e.what() << std::endl;
+			std::cerr << e.what() << std::endl;
 		}
 
 		std::cout << "push more than initial___" << std::endl;
@@ -56,7 +56,7 @@ int main()
 			sp.addNumber(5);
 			sp.addNumber(6);
 		} catch (std::exception &e) {
-			std::cout << e.what() << std::endl;
+			std::cerr << e.what() << std::endl;
 		}
 	}
 	std::cout << "---------------------------" << std::endl;
@@ -74,4 +74,5 @@ int main()
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
 	}
+	return (0);
 }
