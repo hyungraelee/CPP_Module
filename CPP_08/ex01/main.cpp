@@ -1,11 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hyunlee <hyunlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/21 15:57:24 by hyunlee           #+#    #+#             */
+/*   Updated: 2021/08/21 15:57:25 by hyunlee          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include "span.hpp"
 
 int main()
 {
 	{
-		std::cout << "---------------------------" << std::endl;
-		std::cout << "Basic test" << std::endl;
+		std::cout << "============ Basic test ============" << std::endl;
 		Span sp = Span(5);
 
 		sp.addNumber(5);
@@ -17,12 +28,11 @@ int main()
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
 	}
-	std::cout << "---------------------------" << std::endl;
 	{
-		std::cout << "Exception test" << std::endl;
+		std::cout << "============ Exception test ============" << std::endl;
 		Span sp = Span(5);
 
-		std::cout << "empty vector___" << std::endl;
+		std::cout << "___ empty vector ___" << std::endl;
 		try {
 			sp.shortestSpan();
 		} catch (std::exception &e) {
@@ -36,7 +46,7 @@ int main()
 
 		sp.addNumber(1);
 
-		std::cout << "1 element vector___" << std::endl;
+		std::cout << "___ 1 element vector ___" << std::endl;
 		try {
 			sp.shortestSpan();
 		} catch (std::exception &e) {
@@ -48,7 +58,7 @@ int main()
 			std::cerr << e.what() << std::endl;
 		}
 
-		std::cout << "push more than initial___" << std::endl;
+		std::cout << "___ push more than initial ___" << std::endl;
 		try {
 			sp.addNumber(2);
 			sp.addNumber(3);
@@ -59,9 +69,8 @@ int main()
 			std::cerr << e.what() << std::endl;
 		}
 	}
-	std::cout << "---------------------------" << std::endl;
 	{
-		std::cout << "Iterator test" << std::endl;
+		std::cout << "============ Iterator test ============ " << std::endl;
 
 		Span sp(10000);
 
