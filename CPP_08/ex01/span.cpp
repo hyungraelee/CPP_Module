@@ -6,7 +6,7 @@
 /*   By: hyunlee <hyunlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 15:57:29 by hyunlee           #+#    #+#             */
-/*   Updated: 2021/08/21 15:57:30 by hyunlee          ###   ########.fr       */
+/*   Updated: 2021/08/21 17:58:06 by hyunlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,16 @@ int Span::shortestSpan() {
 	std::vector<int> copy = this->vec;
 	sort(copy.begin(), copy.end());
 
-	return (copy[1] - copy[0]);
+	std::vector<int>::iterator prev_it = copy.begin();
+	std::vector<int>::iterator next_it = ++copy.begin();
+	int minSpan = *next_it - *prev_it;
+
+	for ( ; next_it != copy.end(); prev_it++, next_it++) {
+		if ((*next_it - *prev_it) < minSpan)
+			minSpan = (*next_it - *prev_it);
+	}
+
+	return (minSpan);
 }
 
 int Span::longestSpan() {
